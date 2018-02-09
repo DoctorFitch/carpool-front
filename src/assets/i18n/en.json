@@ -1,0 +1,22 @@
+{
+    "LOGIN": {
+        "WELCOME": "Bienvenue",
+        "MAIL": "Email",
+        "PASSWORD": "Mot de passe",
+        "ERROR": {
+            "INVALID_MAIL": "Email invalide",
+            "INVALID_PASSWORD": "Mot de passe invalide",
+            "REQUIRED_MAIL": "Email <strong>requis</strong>",
+            "REQUIRED_PASSWORD": "Mot de passe <strong>requis</strong>"
+        },
+        "BUTTON": {
+            "LOGIN": "Se connecter",
+            "SIGNUP": "S'inscrire"
+        },
+        "FORM": {
+            "ENTER_USERNAME": "Entrez votre email",
+            "ENTER_PASSWORD": "Entrez votre mot de passe",
+            "FORGOT_PASSWORD": "Mot de passe oublié ?"
+        }
+    }
+}
