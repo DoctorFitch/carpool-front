@@ -29,5 +29,11 @@
         "BUTTON": {
             "DISCONNECT": "Déconnexion"
         }
+    },
+    "HOME": {
+        "FORM": {
+            "START_DESTINATION": "Destination de départ",
+            "ARRIVAL_DESTINATION": "Destination d'arrivée"
+        }
     }
 }
