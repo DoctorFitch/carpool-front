@@ -1,37 +1,47 @@
-<!-- <div class="row">
-  <form class="col s12">
-    <div class="row">
-      <div class="input-field col s6">
-        <i class="far fa-arrow-alt-circle-right"></i>
-        <input class="validate" type="text" name="password" id="password">
-        <label for="password">{{ 'HOME.FORM.START_DESTINATION' | translate }}</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6">
-        <i class="fas fa-arrow-alt-circle-right"></i>
-        <input class="validate" type="text" name="password" id="password">
-        <label for="password">{{ 'HOME.FORM.ARRIVAL_DESTINATION' | translate }}</label>
-      </div>
-    </div>
-  </form>
-</div> -->
-
 <div class="row">
-  <div class="col s3"></div>
-  <form class="col s6">
-    <div class="row first-row">
-      <div class="input-field col s12">
-        <input class="validate" type="email" [(ngModel)]="username" name="username" id="username">
-        <label for="username" class="">{{ 'HOME.FORM.START_DESTINATION' | translate }}</label>
+
+  <!-- Navigation details pannel -->
+  <div class="col s4">
+
+    <div class="row form-destination">
+
+      <!-- allow to center the form -->
+      <div class="col s1"></div>
+      <!-- form -->
+      <div class="col s9">
+        <div class="input-field col s12">
+          <i class="fas fa-map-marker-alt prefix"></i>
+          <input class="validate" type="text" [(ngModel)]="start" name="start" id="start">
+          <label for="username" class="">{{ 'HOME.FORM.START_DESTINATION' | translate }}</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="fab fa-font-awesome-flag prefix"></i>
+          <input class="validate" type="text" [(ngModel)]="end" name="end" id="end">
+          <label for="password">{{ 'HOME.FORM.ARRIVAL_DESTINATION' | translate }}</label>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="center-align">
+      <a class="waves-effect waves-light btn center-align" (click)="itinary()">Calculer mon itinéraire !</a>
+    </p>
+
+    <div class="row travel-details">
+      <!-- allow to center the form -->
+      <div class="col s1"></div>
+      <div class="col s9" *ngIf="routeDetails">
+        <h5>Détails de votre voyage</h5>
+        <div> Distance : {{ routeDetails.distance }}</div>
+        <div> Durée : {{ routeDetails.duration }}</div>
       </div>
     </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input class="validate" type="password" autocomplete="new-password" [(ngModel)]="password" name="password" id="password">
-        <label for="password">{{ 'HOME.FORM.ARRIVAL_DESTINATION' | translate }}</label>
-      </div>
-    </div>
-  </form>
-  <div class="col s3"></div>
+
+  </div>
+
+  <!-- Map content  -->
+  <div class="col s8">
+    <div id="gmap" [appAutoSize]="70" style="margin-top: 0px;"></div>
+  </div>
+
 </div>

@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyAz3UTbeIZpLMxx7MkKbPHMDFsHnU_yYcc',
-    authDomain: 'maindo-firebase.firebaseapp.com',
-    databaseURL: 'https://maindo-firebase.firebaseio.com',
-    projectId: 'maindo-firebase',
-    storageBucket: 'maindo-firebase.appspot.com',
-    messagingSenderId: '220915462359'
+    apiKey: 'AIzaSyBoD7zX8SnfecLVEsDiyui_3qHv-Cvd1Js',
+    authDomain: 'carpoolee.firebaseapp.com',
+    databaseURL: 'https://carpoolee.firebaseio.com',
+    projectId: 'carpoolee',
+    storageBucket: 'carpoolee.appspot.com',
+    messagingSenderId: '193988618449'
   }
 };

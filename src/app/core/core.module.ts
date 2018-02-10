@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import { AuthentificationCheckService } from 'app/core/authentification/authentification-check.service';
 import { NotifyService } from '.';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NavigationService } from 'app/core/navigation/navigation.service';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   providers: [
     AuthentificationCheckService,
-    NotifyService
+    NotifyService,
+    NavigationService
   ]
 })
 
