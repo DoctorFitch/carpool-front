@@ -1,5 +1,3 @@
-# Carpool
-
 <p align="center">
   <img src="https://i.imgur.com/QHWEl0V.jpg"/>
 </p>
