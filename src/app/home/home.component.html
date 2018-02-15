@@ -3,12 +3,11 @@
   <!-- Navigation details pannel -->
   <div class="col s4">
 
-    <div class="row form-destination">
-
+    <div class="row" [appAutoSize]="80" [factor]="0.5">
       <!-- allow to center the form -->
       <div class="col s1"></div>
       <!-- form -->
-      <div class="col s9">
+      <div class="col s9 form-destination" style="padding-top: 20%;">
         <div class="input-field col s12">
           <i class="fas fa-map-marker-alt prefix"></i>
           <input class="validate" type="text" [(ngModel)]="start" name="start" id="start">
@@ -21,21 +20,27 @@
         </div>
       </div>
 
+      <p class="center-align margin0">
+        <button class="btn waves-effect waves-light" type="submit" name="action" (click)="itinary()" style="background-color: #00A896">Calculer !
+          <i class="material-icons right">directions_car</i>
+        </button>
+      </p>
     </div>
 
-    <p class="center-align">
-      <a class="waves-effect waves-light btn center-align" (click)="itinary()">Calculer mon itinéraire !</a>
-    </p>
-
-    <div class="row travel-details">
+    <div class="row" [appAutoSize]="80" [factor]="0.5">
       <!-- allow to center the form -->
-      <div class="col s1"></div>
-      <div class="col s9" *ngIf="routeDetails">
-        <h5>Détails de votre voyage</h5>
+      <div class="col s9 travel-details" *ngIf="routeDetails; else waitingDetails" style="padding-left: 10%!important;">
+        <h5>Votre voyage</h5>
         <div> Distance : {{ routeDetails.distance }}</div>
         <div> Durée : {{ routeDetails.duration }}</div>
       </div>
     </div>
+
+    <ng-template #waitingDetails>
+      <p class="center travel-details">
+        <img class="waiting-details-gif" src="/assets/images/waiting.gif">
+      </p>
+    </ng-template>
 
   </div>
 

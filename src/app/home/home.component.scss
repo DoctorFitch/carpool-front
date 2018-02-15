@@ -12,8 +12,8 @@
 
 #gmap {
   margin: 0;
-    padding: 0;
-    width: 100% !important;
+  padding: 0;
+  width: 100% !important;
   height: 100%;
   position: relative;
 }
@@ -23,9 +23,18 @@
 }
 
 .form-destination {
-  padding-top: 40px;
+  padding-top: 5%;
 }
 
-.travel-details { 
-  padding-top: 5%;
+.travel-details {
+  padding-top: 10%!important;
+}
+
+.waiting-details-gif {
+  height: auto;
+  width: 50%;
+}
+
+.margin0 {
+  margin: 0;
 }
