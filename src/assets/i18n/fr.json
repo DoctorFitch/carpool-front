@@ -3,6 +3,11 @@
         "WELCOME": "Bienvenue",
         "MAIL": "Email",
         "PASSWORD": "Mot de passe",
+        "USERNAME": "Nom d'utilisateur",
+        "ADRESS": "Addresse",
+        "TOWN": "Ville",
+        "POSTAL_CODE": "Code postal",
+        "COUNTRY": "Pays",
         "ERROR": {
             "INVALID_MAIL": "Email invalide",
             "INVALID_PASSWORD": "Mot de passe invalide",

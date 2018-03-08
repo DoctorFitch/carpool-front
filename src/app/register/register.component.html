@@ -1,0 +1,54 @@
+<div class="container center-align" [appAutoSize]="0">
+  <div class="login-form z-depth-1 row left-align">
+    <form class="col s12">
+      <div class="row first-row">
+        <div class="input-field col s12">
+          <input class="validate" type="text" name="username" id="username">
+          <label for="username" class="">{{ 'LOGIN.USERNAME' | translate }}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input class="validate" type="email" name="email" id="email">
+          <label for="email">{{ 'LOGIN.MAIL' | translate }}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input class="validate" type="password" autocomplete="new-password" name="password" id="password">
+          <label for="password">{{ 'LOGIN.PASSWORD' | translate }}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input class="validate" type="text" name="adress" id="adress">
+          <label for="adress">{{ 'LOGIN.ADRESS' | translate }}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input class="validate" type="text" name="town" id="town">
+          <label for="town">{{ 'LOGIN.TOWN' | translate }}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input class="validate" type="text" name="postal-code" id="postal-code">
+          <label for="postal-code">{{ 'LOGIN.POSTAL_CODE' | translate }}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input class="validate" type="text" name="country" id="country">
+          <label for="country">{{ 'LOGIN.COUNTRY' | translate }}</label>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <button type="submit" name="btn_login" (click)="login()" class="col s12 btn btn-large btn-default waves-effect">{{'LOGIN.FORM.VALIDATE' | translate}}</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <app-change-password></app-change-password> -->

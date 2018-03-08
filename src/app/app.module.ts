@@ -19,7 +19,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
