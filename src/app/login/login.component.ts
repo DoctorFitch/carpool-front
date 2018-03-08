@@ -34,10 +34,12 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.username, this.password);
     this.username = '';
     this.password = '';
+    this.isUserConnected = true;
+    this.router.navigateByUrl('/home');
+
   }
 
   logout() {
-    this.authService.logout();
   }
 
   ngOnInit() {

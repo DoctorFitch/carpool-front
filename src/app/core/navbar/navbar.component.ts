@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     // * get email of currently connected user
-    this._authService.getAuth().onAuthStateChanged(user => this.username = user.email);
+    // this._authService.getAuth().onAuthStateChanged(user => this.username = user.email);
   }
 
   activeDropdown() {
