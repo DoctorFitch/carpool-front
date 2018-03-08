@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+// import { Observable } from 'rxjs/Observable';
+
+import { Observable } from 'rxjs/Rx';
 
 declare var google: any;  // globale declaration of the google namespace
 
