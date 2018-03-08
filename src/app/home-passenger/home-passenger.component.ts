@@ -5,8 +5,8 @@ declare var google: any;
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  templateUrl: './home-passenger.component.html',
+  styleUrls: ['./home-passenger.component.scss']
 })
 
 export class HomeComponent implements OnInit {
