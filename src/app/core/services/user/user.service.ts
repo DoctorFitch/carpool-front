@@ -41,7 +41,7 @@ export class UserService extends HttpService {
     }
 
     delete(id: number) {
-        return this.http.delete(this.apiurl + '/users' + id, this.getOptions)
+        return this.http.delete(this.apiurl + '/users/' + id, this.getOptions)
             .map((response: Response) => { })
             .catch(this.handleError);
     }

@@ -45,6 +45,15 @@
         "FORM": {
             "START_DESTINATION": "Destination de départ",
             "ARRIVAL_DESTINATION": "Destination d'arrivée"
+        },
+        "BUTTON": {
+            "FIND_PICKER": "Trouver un covoiturage !"
         }
+    },
+    "PROFIL": {
+        "TITLE": "Vos informations",
+        "ROUTE": "Vos 5 derniers trajets",
+        "DELETE": "Supprimer mon compte",
+        "SAVE": "Sauvegarder mes modifications"
     }
 }

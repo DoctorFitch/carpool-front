@@ -3,16 +3,19 @@
   <!-- Navigation details pannel -->
   <div class="col s4">
 
-    <div class="row" [appAutoSize]="80" [factor]="0.5">
+    <div class="row" [appAutoSize]="80">
+      <p class="center travel-details">
+        <img class="waiting-details-gif" src="/assets/images/waiting.gif">
+      </p>
       <!-- allow to center the form -->
       <div class="col s1"></div>
       <!-- form -->
-      <div class="col s9 form-destination" style="padding-top: 20%;">
-        <div class="input-field col s12">
+      <div class="col s9 form-destination">
+        <!-- <div class="input-field col s12">
           <i class="fas fa-map-marker-alt prefix"></i>
           <input class="validate" type="text" [(ngModel)]="start" name="start" id="start">
           <label for="username" class="">{{ 'HOME.FORM.START_DESTINATION' | translate }}</label>
-        </div>
+        </div> -->
         <div class="input-field col s12">
           <i class="fab fa-font-awesome-flag prefix"></i>
           <input class="validate" type="text" [(ngModel)]="end" name="end" id="end">
@@ -20,27 +23,27 @@
         </div>
       </div>
 
-      <p class="center-align margin0">
-        <button class="btn waves-effect waves-light" type="submit" name="action" (click)="itinary()" style="background-color: #00A896">Calculer !
+      <p class="margin0 center-align">
+        <button class="btn waves-effect waves-light" type="submit" name="action" (click)="itinary()" style="background-color: #00A896">{{'HOME.BUTTON.FIND_PICKER' | translate}}
           <i class="material-icons right">directions_car</i>
         </button>
       </p>
     </div>
 
-    <div class="row" [appAutoSize]="80" [factor]="0.5">
+    <!-- <div class="row" [appAutoSize]="80" [factor]="0.5">
       <!-- allow to center the form -->
-      <div class="col s9 travel-details" *ngIf="routeDetails; else waitingDetails" style="padding-left: 10%!important;">
+    <!-- <div class="col s9 travel-details" *ngIf="routeDetails; else waitingDetails" style="padding-left: 10%!important;">
         <h5>Votre voyage</h5>
         <div> Distance : {{ routeDetails.distance }}</div>
         <div> Durée : {{ routeDetails.duration }}</div>
       </div>
-    </div>
+    </div> -->
 
-    <ng-template #waitingDetails>
+    <!-- <ng-template #waitingDetails>
       <p class="center travel-details">
         <img class="waiting-details-gif" src="/assets/images/waiting.gif">
       </p>
-    </ng-template>
+    </ng-template> -->
 
   </div>
 

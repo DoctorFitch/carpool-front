@@ -1,10 +1,10 @@
 <div *ngIf="user">
 
   <div class="row">
-    <div class="col s12">
+    <div class="col s8">
       <div class="card-panel" [appAutoSize]="95">
         <div class="title-form">
-          <h4>Votre profil</h4>
+          <h4>{{ "PROFIL.TITLE" | translate }}</h4>
         </div>
         <form class="col s12">
           <!-- {{ user.id }} -->
@@ -65,14 +65,42 @@
             </div>
           </div>
 
-          <br>
-          <div class="row">
-            <button type="submit" name="btn_login" (click)="register()" class="col s12 btn btn-large btn-default waves-effect">{{'LOGIN.BUTTON.SAVE_MODIFICATIONS' | translate}}</button>
-          </div>
         </form>
+      </div>
+      <div class="row right-align btn-profil">
+        <button class="btn waves-effect waves-light red" (click)="deleteAccount()">{{'PROFIL.DELETE' | translate}}
+          <i class="material-icons right">delete_forever</i>
+        </button>
+        <button class="btn waves-effect waves-light green" (click)="updateProfil()">{{'PROFIL.SAVE' | translate}}
+          <i class="material-icons right">save</i>
+        </button>
+      </div>
+    </div>
+
+    <div class="col s4">
+      <div class="card-panel" [appAutoSize]="95">
+        <div class="title-form">
+          <h4>{{ "PROFIL.ROUTE" | translate }}</h4>
+        </div>
+        <div class="col s12">
+          <ul class="collapsible" data-collapsible="accordion">
+            <li *ngFor="let user of users" (click)="activeCollapside()">
+              <div class="collapsible-header">
+                <i class="material-icons">filter_drama</i>{{user.username}} : Toulouse - Bordeaux</div>
+              <div class="collapsible-body">
+                <span>Lorem ipsum dolor sit amet.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
 
       </div>
     </div>
+
+  </div>
+
+  <div class="row">
+
   </div>
 
 
