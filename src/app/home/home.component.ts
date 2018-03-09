@@ -10,6 +10,11 @@ declare var google: any;
 })
 export class HomeComponent implements OnInit {
 
+  marker: any;
+  currentLong: any;
+  currentLat: any;
+  isTracking: boolean;
+  
   @ViewChild('gmap') gmapElement: any;
   map:any;
 
@@ -20,8 +25,37 @@ export class HomeComponent implements OnInit {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     this.map = new google.maps.Map(document.getElementById('gmap'), mapProp);
+    this.findMe();
   }
 
 
+  showPosition(position) {
+    this.currentLat = position.coords.latitude;
+    this.currentLong = position.coords.longitude;
+
+    let location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    this.map.panTo(location);
+
+    if (!this.marker) {
+      this.marker = new google.maps.Marker({
+        position: location,
+        map: this.map,
+        title: 'Got you!'
+      });
+    }
+    else {
+      this.marker.setPosition(location);
+    }
+  }
+
+  findMe() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.showPosition(position);
+      });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
 
 }
