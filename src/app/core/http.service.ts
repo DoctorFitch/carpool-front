@@ -2,14 +2,12 @@ import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
 import { Response, Headers, RequestOptions } from '@angular/http';
 
-import { NotifyService } from '.';
-
 export class HttpService {
     protected baseUrl: string;
     protected getOptions: RequestOptions;
     protected postOptions: RequestOptions;
-    constructor(private notify: NotifyService) {
-        this.baseUrl = environment.apiUrl + 'api/';
+    constructor() {
+        this.baseUrl = environment.fakeApi + 'api/';
         const getHeaders = new Headers({
             'Cache-control': 'no-cache, no-store, must-revalidate',
             'Pragma': 'no-cache',
@@ -54,17 +52,17 @@ export class HttpService {
             ' : Une erreur Server est survenue, veuillez contacter votre administrateur.' :
             'Une erreur Server est survenue, veuillez contacter votre administrateur.';
 
-        this.notify.error({
-            'position': {
-                at: 'bottom right',
-                my: 'bottom right',
-                offset: '-10 -10'
-            },
-            'maxWidth': 350,
-            'message': toastMsg,
-            'displayTime': 3000,
-            'type': 'error'
-        });
+        // this.notify.error({
+        //     'position': {
+        //         at: 'bottom right',
+        //         my: 'bottom right',
+        //         offset: '-10 -10'
+        //     },
+        //     'maxWidth': 350,
+        //     'message': toastMsg,
+        //     'displayTime': 3000,
+        //     'type': 'error'
+        // });
 
         let errMsg = error.status !== 0 ? `${error.status} - ${error.statusText}` : 'Internal Server Error';
 

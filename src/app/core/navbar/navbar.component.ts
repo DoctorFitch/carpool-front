@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthentificationCheckService } from 'app/core/authentification/authentification-check.service';
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { AuthentificationCheckService } from 'app/core/services/authentification/authentification-check.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { User } from 'app/core/models/user.model';
+import { Subscription } from 'rxjs';
 
 // jquery
 declare var $: any;
@@ -12,16 +15,21 @@ declare var $: any;
 })
 export class NavbarComponent implements OnInit {
 
-  username: string;
+  email: string;
+  isAuthenticated: Observable<boolean>;
+  currentUser: User;
+  userSubscription: Subscription;
 
   constructor(
-    public _authService: AuthentificationCheckService,
+    public authSvc: AuthentificationCheckService,
     public _router: Router
   ) { }
 
   ngOnInit() {
-    // * get email of currently connected user
-    // this._authService.getAuth().onAuthStateChanged(user => this.username = user.email);
+    this.isAuthenticated = this.authSvc.isLoggedIn;
+    // ? get user actually connected to display informations in header
+    this.userSubscription = this.authSvc.currentUserObservable.subscribe(user => this.currentUser = user);
+    console.log('this current user ', this.currentUser);
   }
 
   activeDropdown() {
@@ -29,8 +37,12 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this._authService.logout();
+    this.authSvc.logout();
     this._router.navigateByUrl('/login');
+  }
+
+  openProfil() {
+    this._router.navigateByUrl('/user-profile');
   }
 
 }

@@ -1,10 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { environment } from '../environments/environment';
-// firebase
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireStorageModule } from 'angularfire2/storage';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from 'app/core/core.module';
@@ -16,6 +12,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SimpleNotificationsModule } from 'angular2-notifications';
+import { AuthGuard } from 'app/auth.guard';
 
 @NgModule({
   declarations: [
@@ -37,7 +34,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
     }),
     SimpleNotificationsModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

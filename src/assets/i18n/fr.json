@@ -3,6 +3,7 @@
         "WELCOME": "Bienvenue",
         "MAIL": "Email",
         "PASSWORD": "Mot de passe",
+        "CONFIRM_PASSWORD": "Confirmer mot de passe",
         "USERNAME": "Nom d'utilisateur",
         "ADRESS": "Addresse",
         "TOWN": "Ville",
@@ -19,9 +20,14 @@
             "CONNECTED": "Vous êtes désormais connecté",
             "DISCONNECTED": "Vous êtes désormais déconnecté"
         },
+        "LINK": {
+            "FORGOT_PASSWORD": "Mot de passe oublié ?",
+            "SIGNUP": "Vous souhaitez vous inscrire ?"
+        },
         "BUTTON": {
             "LOGIN": "Se connecter",
-            "SIGNUP": "S'inscrire"
+            "SIGNUP": "S'inscrire",
+            "SAVE_MODIFICATIONS": "Sauvegarder les modifications"
         },
         "FORM": {
             "ENTER_USERNAME": "Entrez votre email",

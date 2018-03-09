@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'app/core/models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,16 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  untext = '';
+  user: User = new User();
+  isBtnDisabled = true;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
 
   }
 
-  afficheText() {
-    this.untext = 'bonnet';
+  register() {
+    if (this.user.password === this.user.confirmPassword) {
+      console.log('register', this.user);
+      this.router.navigateByUrl('/login');
+    }
   }
 
 }
