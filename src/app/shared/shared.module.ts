@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { AutosizeDirective } from './autosize.directive';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { FormsModule } from '@angular/forms';
     // translation
     TranslateModule,
     AutosizeDirective,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   declarations: [AutosizeDirective]
 })

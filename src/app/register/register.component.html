@@ -1,0 +1,71 @@
+<div class="container center-align" [appAutoSize]="0">
+  <div class="login-form z-depth-1 row left-align">
+    <h5>Nouvel utilisateur</h5>
+    <form class="col s12">
+
+      <div class="row first-row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input class="validate" type="text" [(ngModel)]="user.username" name="username" id="username">
+          <label for="username" class="">{{ 'LOGIN.USERNAME' | translate }}</label>
+        </div>
+
+        <div class="input-field col s6">
+          <i class="material-icons prefix">email</i>
+          <input class="validate" type="email" [(ngModel)]="user.email" name="email" id="email">
+          <label for="email">{{ 'LOGIN.MAIL' | translate }}</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">lock</i>
+          <input class="validate" type="password" [(ngModel)]="user.password" autocomplete="new-password" name="password" id="password">
+          <label for="password">{{ 'LOGIN.PASSWORD' | translate }}</label>
+        </div>
+
+        <div class="input-field col s6">
+          <i class="material-icons prefix">lock</i>
+          <input class="validate" type="password" [(ngModel)]="user.confirmPassword" autocomplete="new-password" name="confirmPassword"
+            id="confirmPassword">
+          <label for="confirmPassword">{{ 'LOGIN.CONFIRM_PASSWORD' | translate }}</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">location_on</i>
+          <input class="validate" type="text" [(ngModel)]="user.adress" name="adress" id="adress">
+          <label for="adress">{{ 'LOGIN.ADRESS' | translate }}</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s5">
+          <i class="material-icons prefix">location_city</i>
+          <input class="validate" type="text" [(ngModel)]="user.town" name="town" id="town">
+          <label for="town">{{ 'LOGIN.TOWN' | translate }}</label>
+        </div>
+
+        <div class="input-field col s3">
+          <i class="material-icons prefix">markunread_mailbox</i>
+          <input class="validate" type="text" [(ngModel)]="user.postalCode" name="postalCode" id="postalCode">
+          <label for="postalCode">{{ 'LOGIN.POSTAL_CODE' | translate }}</label>
+        </div>
+
+        <div class="input-field col s4">
+          <i class="material-icons prefix">public</i>
+          <input class="validate" type="text" [(ngModel)]="user.country" name="country" id="country">
+          <label for="country">{{ 'LOGIN.COUNTRY' | translate }}</label>
+        </div>
+      </div>
+
+      <br>
+      <div class="row">
+        <button type="submit" name="btn_login" (click)="register()" class="col s12 btn btn-large btn-default waves-effect">{{'LOGIN.BUTTON.SIGNUP' | translate}}</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <app-change-password></app-change-password> -->

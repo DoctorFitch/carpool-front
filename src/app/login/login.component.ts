@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthentificationCheckService } from 'app/core/authentification/authentification-check.service';
+import { AuthentificationCheckService } from 'app/core/services/authentification/authentification-check.service';
 import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NotifyService } from 'app/core';
@@ -31,11 +31,15 @@ export class LoginComponent implements OnInit {
 
   login() {
     console.log('password:', this.password);
-    this.authService.login(this.username, this.password);
+    this.authService.login('1', '').subscribe(user => {
+      if (user.username === 'Bret') {
+        this.router.navigateByUrl('/home-passenger');
+      }
+    });
     this.username = '';
     this.password = '';
     this.isUserConnected = true;
-    this.router.navigateByUrl('/home');
+    // this.router.navigateByUrl('/home');
 
   }
 
@@ -43,14 +47,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.user.subscribe(result => {
-      console.log('result', result);
-      if (result !== null) {
-        this.isUserConnected = true;
-        this.router.navigateByUrl('/home');
-      }
-      console.log('connected ? ', this.isUserConnected);
-    });
+    // this.authService.user.subscribe(result => {
+    //   console.log('result', result);
+    //   if (result !== null) {
+    //     this.isUserConnected = true;
+    //     this.router.navigateByUrl('/home');
+    //   }
+    //   console.log('connected ? ', this.isUserConnected);
+    // });
   }
 
 }

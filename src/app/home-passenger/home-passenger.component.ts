@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   directionsService;
   directionsDisplay;
-  haight = new google.maps.LatLng(37.7699298, -122.4469157);
+  localisation = new google.maps.LatLng(37.7699298, -122.4469157);
 
   // itinary details
   start = '';
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     const mapOptions = {
       zoom: 14,
-      center: this.haight
+      center: this.localisation
     };
     const map = new google.maps.Map(document.getElementById('gmap'), mapOptions);
     this.directionsDisplay.setMap(map);
