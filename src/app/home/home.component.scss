@@ -1,11 +1,3 @@
-.input-field .prefix {
-    top: 10px;
-}
-
-.title {
-  padding-top: 20px;
-}
-
 .row {
   margin-bottom: 0px;
 }
@@ -16,25 +8,46 @@
   width: 100% !important;
   height: 100%;
   position: relative;
+  background-color: black;
 }
 
 .row .col {
   padding: 0;
 }
 
-.form-destination {
-  padding-top: 5%;
+.transparent-back {
+  width: 100% !important;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  position: absolute;
+  border: 250px solid rgba(0, 0, 0, 0.8);
 }
 
-.travel-details {
-  padding-top: 10%!important;
-}
-
-.waiting-details-gif {
+.logo-img {
+  width: 30% !important;
   height: auto;
-  width: 50%;
+  position: relative;
+  top: -70%;
 }
 
-.margin0 {
-  margin: 0;
+.people-number {
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  color: white;
+  position: absolute;
+  bottom: 20%;
+}
+
+.btn-login {
+  position: absolute;
+  z-index: 2;
+  bottom: 15%;
+  width: 30%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }

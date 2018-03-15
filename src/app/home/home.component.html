@@ -1,14 +1,15 @@
 <div class="row">
-
-  <!-- Navigation details pannel -->
-  <div class="col s4">
-    TEST
+  <div class="transparent-back">
+    <img class="logo-img" src="assets/images/carpool.png" alt="">
+  </div>
+  <!-- Map display  -->
+  <div class="col s12">
+    <div id="gmap" [appAutoSize]="0" style="margin-top: 0px;">
+    </div>
   </div>
 
-  <!-- Map content  -->
-  <div class="col s8">
-    <div id="gmap" [appAutoSize]="70" style="margin-top: 0px;"></div>
-  </div>
+  <p class="people-number">7 utilisateurs sont près de chez vous</p>
 
+  <button class="btn-login btn waves-effect waves-light" type="submit" name="action" (click)="goLogin()" style="background-color: #00A896">{{'HOME.BUTTON.FIND_PICKER' | translate}}</button>
 
 </div>

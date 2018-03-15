@@ -3,6 +3,9 @@ import { NavigationService } from 'app/core';
 
 declare var google: any;
 
+// jquery
+declare var $: any;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home-passenger.component.html',
@@ -19,6 +22,7 @@ export class HomeComponent implements OnInit {
   start = '';
   end = '';
   routeDetails;
+  actualPosition: any;
 
   constructor(public _googleService: NavigationService) {
     this.directionsDisplay = new google.maps.DirectionsRenderer();
@@ -32,16 +36,39 @@ export class HomeComponent implements OnInit {
     };
     const map = new google.maps.Map(document.getElementById('gmap'), mapOptions);
     this.directionsDisplay.setMap(map);
+    this.findMe();
+
+    setTimeout(() => {
+      $('#modal1').modal();
+    }, 0);
   }
 
   itinary() {
-    this._googleService.findRoute(this.start, this.end).subscribe(result => {
+    let actualPositionCoordinates = new google.maps.LatLng(this.actualPosition.latitude, this.actualPosition.longitude);
+    console.log('this.actualPosition', actualPositionCoordinates);
+    this._googleService.findRoute(actualPositionCoordinates, this.end).subscribe(result => {
       this.routeDetails = {
         distance: result.routes[0].legs[0].distance.text,
         duration: result.routes[0].legs[0].duration.text
       };
       this.directionsDisplay.setDirections(result);
     });
+
+    this.openBottomModal();
+  }
+
+  findMe() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.actualPosition = position.coords;
+      });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+
+  openBottomModal() {
+    $('#modal1').modal('open');
   }
 
 }

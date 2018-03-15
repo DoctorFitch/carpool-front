@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'user-profile', loadChildren: 'app/shared/user-profile/user-profile.module#UserProfileModule' },
 
   // otherwise redirect to home
-  { path: '**', redirectTo: 'login' }
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

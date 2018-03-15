@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { } from '@types/googlemaps';
+import { Router } from '@angular/router';
 
 declare var google: any;
 
@@ -14,11 +15,13 @@ export class HomeComponent implements OnInit {
   currentLong: any;
   currentLat: any;
   isTracking: boolean;
-  
-  @ViewChild('gmap') gmapElement: any;
-  map:any;
 
-   ngOnInit() {
+  @ViewChild('gmap') gmapElement: any;
+  map: any;
+
+  constructor(private router: Router) { }
+
+  ngOnInit() {
     var mapProp = {
       center: new google.maps.LatLng(18.5793, 73.8143),
       zoom: 15,
@@ -56,6 +59,10 @@ export class HomeComponent implements OnInit {
     } else {
       alert("Geolocation is not supported by this browser.");
     }
+  }
+
+  goLogin() {
+    this.router.navigateByUrl('/login');
   }
 
 }
