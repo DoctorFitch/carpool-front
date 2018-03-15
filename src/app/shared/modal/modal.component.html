@@ -1,0 +1,13 @@
+<a (click)="open()">Modal</a>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal modal-fixed-footer" materialize="modal" [materializeActions]="modalActions">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-green btn-flat" (click)="close(false)">Annuler</a>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat" (click)="close(true)">Ajouter !</a>
+  </div>
+</div>

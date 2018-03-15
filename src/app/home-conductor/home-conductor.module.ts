@@ -5,6 +5,7 @@ import { HomeConductorRoutingModule } from 'app/home-conductor/home-conductor.ro
 
 // components
 import { HomeConductorComponent } from 'app/home-conductor/home-conductor.component';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   imports: [

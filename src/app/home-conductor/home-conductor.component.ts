@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalComponent } from '../shared/modal/modal.component';
 
 @Component({
   selector: 'app-home-conductor',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeConductorComponent implements OnInit {
 
+  @ViewChild(ModalComponent) modal: ModalComponent;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  openModal() {
+    this.modal.open();
+  }
+
+  addRoute(e) {
+    console.log('modal close save ? :', e);
   }
 
 }
