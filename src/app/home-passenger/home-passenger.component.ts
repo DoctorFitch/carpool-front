@@ -12,7 +12,7 @@ declare var $: any;
   styleUrls: ['./home-passenger.component.scss']
 })
 
-export class HomeComponent implements OnInit {
+export class HomePassengerComponent implements OnInit {
 
   directionsService;
   directionsDisplay;
