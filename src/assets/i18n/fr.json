@@ -52,6 +52,7 @@
     },
     "PROFIL": {
         "TITLE": "Vos informations",
+        "CONDUCTOR_TITLE": "Vos trajets",
         "ROUTE": "Vos 5 derniers trajets",
         "DELETE": "Supprimer mon compte",
         "SAVE": "Sauvegarder mes modifications"

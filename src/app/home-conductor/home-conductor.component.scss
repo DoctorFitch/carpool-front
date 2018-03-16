@@ -1,0 +1,47 @@
+.title-card {
+    display: inline;
+}
+
+.add-route {
+    float: right;
+}
+
+.collection .collection-item.avatar:not(.circle-clipper)>.circle, .collection .collection-item.avatar :not(.circle-clipper)>.circle {
+    top: 20px;
+}
+
+span.badge.new {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.routes-list {
+    padding-top: 3%;
+}
+
+.header-card {
+    position: relative;
+    top: 15px;
+}
+
+// ! passengers badge
+.chip>img {
+    margin: -1px 6px 0px -12px;
+    height: 27px;
+    width: 27px;
+}
+
+.chip {
+    height: 25px;
+    line-height: 25px;
+    padding: 0 12px;
+}
+
+.chip .close {
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    line-height: 27px;
+    padding-left: 5px;
+}
