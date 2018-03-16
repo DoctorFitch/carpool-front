@@ -3,8 +3,56 @@
 <!-- Modal Structure -->
 <div id="modal1" class="modal modal-fixed-footer" materialize="modal" [materializeActions]="modalActions">
   <div class="modal-content">
-    <h4>Modal Header</h4>
-    <p>A bunch of text</p>
+
+
+    <h4>Proposer un trajet</h4>
+    
+    
+    <div class="input-field col s6">
+        <input  id="depart" type="text" class="validate">
+        <label for="first_name">Départ</label>
+      </div>
+    <div class="input-field col s6">
+      <input id="destination" type="text" class="validate">
+      <label for="first_name">Destination</label>
+    </div>
+    <a class="waves-effect waves-light btn">Calculer le temps de trajet</a><br>
+
+    <label for="heure" class="">Heure du départ</label>
+    <input id="heure" type="text" class="timepicker">
+
+    <div class="input-field col s12">
+        <select>
+          <option value="" selected>Places disponibles</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          
+        </select>
+      </div>
+
+      <p>
+        <input type="checkbox" id="smoke" />
+        <label for="smoke">Fumeur ?</label>
+      </p>
+      
+      <p>
+        <input type="checkbox" id="music" />
+        <label for="music">Aime écouter de la musique ?</label>
+      </p>
+
+      <p>
+        <input type="checkbox" id="pet" />
+        <label for="pet">Animaux acceptés ?</label>
+      </p>
+
+    
+     
+
+
   </div>
   <div class="modal-footer">
     <a class="modal-action modal-close waves-effect waves-green btn-flat" (click)="close(false)">Annuler</a>
