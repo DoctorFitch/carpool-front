@@ -10,6 +10,11 @@
 
   <p class="people-number">7 utilisateurs sont près de chez vous</p>
 
-  <button class="btn-login btn waves-effect waves-light" type="submit" name="action" (click)="goLogin()" style="background-color: #00A896">{{'HOME.BUTTON.FIND_PICKER' | translate}}</button>
+  <button class="btn-login-conductor btn waves-effect waves-light" type="submit" name="action" (click)="goLogin('conductor')">
+    {{'HOME.BUTTON.CONDUCTOR' | translate}}
+  </button>
+  <button class="btn-login-passenger btn waves-effect waves-light" type="submit" name="action" (click)="goLogin('passenger')">
+    {{'HOME.BUTTON.PASSENGER' | translate}}
+  </button>
 
 </div>

@@ -7,9 +7,12 @@ import { HttpService } from 'app/core/http.service';
 import { Http, Response } from '@angular/http';
 import { User } from 'app/core/models/user.model';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from 'environments/environment';
 
 @Injectable()
 export class AuthentificationCheckService extends HttpService {
+
+  apiurl = environment.api;
 
   private loggedIn = new BehaviorSubject<boolean>(false);
   private currentUserSubject = new BehaviorSubject<User>(null);
@@ -33,8 +36,9 @@ export class AuthentificationCheckService extends HttpService {
   }
 
   login(username: string, password: string): Observable<User> {
-    return this.http.get('https://jsonplaceholder.typicode.com/users/' + username, this.getOptions)
+    return this.http.get(this.apiurl + '/users/' + username, this.getOptions)
       .map((userResponse: Response) => {
+        console.log('reponse du get user', userResponse);
         // login successful if there's a jwt token in the response
         if (userResponse) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -44,7 +48,8 @@ export class AuthentificationCheckService extends HttpService {
           this.loggedIn.next(true);
         }
         return this.extractSingleData(userResponse, User);
-      });
+      })
+      .catch(this.handleError);
   }
 
   logout() {

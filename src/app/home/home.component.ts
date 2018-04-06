@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  // ! init object map with a default location and some parameters for good render
   ngOnInit() {
     var mapProp = {
       center: new google.maps.LatLng(18.5793, 73.8143),
@@ -31,7 +32,7 @@ export class HomeComponent implements OnInit {
     this.findMe();
   }
 
-
+  // ! display position on map and place marker
   showPosition(position) {
     this.currentLat = position.coords.latitude;
     this.currentLong = position.coords.longitude;
@@ -51,6 +52,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  // ! use location of navigator
   findMe() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -61,8 +63,8 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  goLogin() {
-    this.router.navigateByUrl('/login');
+  // ! redirect user on login with parameter like : conductor / login to know wich view display after log
+  goLogin(e) {
+    this.router.navigate(['/login', { type: e }]);
   }
-
 }

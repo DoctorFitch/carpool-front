@@ -8,7 +8,7 @@ import { environment } from 'environments/environment';
 @Injectable()
 export class UserService extends HttpService {
 
-    apiurl = environment.fakeApi;
+    apiurl = environment.api;
 
     constructor(private http: Http) {
         super();
@@ -28,6 +28,7 @@ export class UserService extends HttpService {
 
     create(user: User): Observable<User> {
         const body = JSON.stringify(user);
+        console.log('body', body);
         return this.http.post(this.apiurl + '/users', user, this.postOptions)
             .map((response: Response) => this.extractSingleData(response, User))
             .catch(this.handleError);
@@ -40,7 +41,7 @@ export class UserService extends HttpService {
             .catch(this.handleError);
     }
 
-    delete(id: number) {
+    delete(id: string) {
         return this.http.delete(this.apiurl + '/users/' + id, this.getOptions)
             .map((response: Response) => { })
             .catch(this.handleError);

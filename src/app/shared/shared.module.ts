@@ -6,11 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterializeModule } from 'angular2-materialize';
 import { ModalComponent } from './modal/modal.component';
+import { AngularGooglePlaceModule } from 'angular-google-place';
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterializeModule
+    MaterializeModule,
+    AngularGooglePlaceModule
   ],
   exports: [
     // translation
@@ -19,7 +21,8 @@ import { ModalComponent } from './modal/modal.component';
     FormsModule,
     HttpModule,
     MaterializeModule,
-    ModalComponent
+    ModalComponent,
+    AngularGooglePlaceModule
   ],
   declarations: [AutosizeDirective, ModalComponent]
 })

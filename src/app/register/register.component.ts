@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'app/core/models/user.model';
 import { Router } from '@angular/router';
+import { UserService } from '../core/services/user/user.service';
 
 @Component({
   selector: 'app-register',
@@ -10,19 +11,19 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   user: User = new User();
+  confirmPassword: string;
   isBtnDisabled = true;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userSvc: UserService) { }
 
   ngOnInit() {
 
   }
 
   register() {
-    if (this.user.password === this.user.confirmPassword) {
-      console.log('register', this.user);
-      this.router.navigateByUrl('/login');
-    }
+    this.userSvc.create(this.user).subscribe((user) => {
+      console.log('user created', user);
+    })
   }
 
 }

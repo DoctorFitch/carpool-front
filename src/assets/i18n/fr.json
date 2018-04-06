@@ -47,7 +47,8 @@
             "ARRIVAL_DESTINATION": "Destination d'arrivée"
         },
         "BUTTON": {
-            "FIND_PICKER": "Trouver un covoiturage !"
+            "PASSENGER": "Passager",
+            "CONDUCTOR": "Conducteur"
         }
     },
     "PROFIL": {
@@ -56,5 +57,8 @@
         "ROUTE": "Vos 5 derniers trajets",
         "DELETE": "Supprimer mon compte",
         "SAVE": "Sauvegarder mes modifications"
+    },
+    "COMMON": {
+        "SEARCH": "Rechercher"
     }
 }
